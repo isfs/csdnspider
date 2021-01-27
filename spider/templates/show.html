@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="../static/css/index.css">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+        .box_box:hover {
+            background: #E3E6E9;
+        }
+
+        .box_box a:hover {
+            color: red;
+        }
+
+        hr {
+            margin: 0px;
+        }
+
+        #d2 {
+            display: none;
+        }
+
+        #d3 {
+            display: none;
+        }
+    </style>
+</head>
+
+<script language="javascript">
+    window.onload=function(){
+        var i = {{ flag|tojson }};
+        if(i==1){
+            document.getElementById("d"+1).style.display = "none";
+            document.getElementById("d"+2).style.display = "none";
+            document.getElementById("d"+3).style.display = "block";
+        }
+　　}
+    function Tab(num) {
+        var i;
+        for (i = 1; i <= 2; i++) {
+            if (num == i)
+                document.getElementById("d"+i).style.display = "block";
+            else
+                document.getElementById("d"+i).style.display = "none";
+        }
+    }
+
+</script>
+<body style="background: url(../static/img/35.jpg);background-size:100% 100% ; background-attachment: fixed">
+<div id="daoHang" class="clearfix layer" style="height: 30px;background:#fff ;
+    	position: static;overflow: hidden;">
+    <ul class="fl">
+        <li>
+           <img src="../static/img/csdn.png" style="height: 40px; margin-top: -5px">
+        </li>
+    </ul>
+    <div style="float: left;margin-left: 5%;width: 500px;">
+        <div style="overflow: hidden;">
+            <div style="float: left;line-height: 30px">查询 &nbsp;&nbsp;&nbsp;</div>
+            <div style="float: left">
+                 <form action="http://localhost:5000/search" method="POST">
+                     <input id="btn_start" type="submit" value=""  style="background-image: url(../static/img/search.png);border-radius: 10px;
+					width: 30px;height: 30px;background-size:32px 32px; border: 0;
+					line-height: 25px;background-size: 100% 100%; margin-left: 5px"/>
+                     <input type="text" name="bloggername" value="{{ blog[0] }}" hidden="hidden"/>
+                     <input type="text" name="datas" value="{{ datas }}" hidden="hidden"/>
+                     <input type="text" name="blog" value="{{ blog }}" hidden="hidden"/>
+                     <input type="text" name="sortres" value="{{ sortres }}" hidden="hidden"/>
+                     <input type="text" name="img_src" value="{{ img_src }}" hidden="hidden"/>
+                     <input type="text" name="update_src" value="{{ update_src }}" hidden="hidden"/>
+                     <input id="input" type="text" name="key" placeholder="哈哈哈哈" style="line-height: 25px;width: 200px;float: left;"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <ul class="fr">
+        <li>
+            <a href="#">首页</a>
+        <li>
+            <a href="#">注册</a>
+        <li>
+            <a href="#">登陆</a>
+        <li>
+            <a href="#">文件上传</a>
+        <li>
+            <a href="../">退出</a>
+    </ul>
+</div>
+
+<div style="width: 100%;overflow: hidden;">
+    <div class="zhuce" style="width: 22%;">
+        <div style="overflow: hidden;">
+            <div style="float: left;margin-left: 5%;">
+                <img src='{{ img_src }}' style="margin-top: 10px;width: 70px;height: 70px;border-radius: 50%"/>
+            </div>
+            <div style="float: left;margin-top: 10%;margin-left: 15px">
+                <div>
+                    <p>昵称：{{ blog[5] }}</p>
+                </div>
+                <div>
+                    <p>博主名：{{ blog[0] }}</p>
+                </div>
+            </div>
+        </div>
+        <div style="overflow: hidden;margin-top: 15px">
+            <div style="float: left;width: 60px;height: 60px;margin-left: 12%;text-align: center">
+                <div>
+                    <p>{{ blog[3] }}</p>
+                    <p style="margin-top: 3px;font-weight: 600;"  >原创文章</p>
+                </div>
+            </div>
+            <div style="float: left;width: 60px;height: 60px;margin-left: 10%;text-align: center">
+                <div>
+                    <p>{{ blog[4] }}</p>
+                    <p style="margin-top: 3px;font-weight: 600;">总排名</p>
+                </div>
+            </div>
+            <div style="float: left;width: 60px;height: 60px;margin-left: 10%;text-align: center">
+                <div>
+                    <p>{{ blog[1] }}</p>
+                    <p style="margin-top: 3px;font-weight: 600;">访问量</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="overflow: hidden;margin-top: 5px">
+            <div style="float: left;width: 60px;height: 60px;margin-left: 12%;text-align: center">
+                <div>
+                    <p>{{ blog[6] }}</p>
+                    <p style="margin-top: 3px;font-weight: 600;">粉丝数</p>
+                </div>
+            </div>
+            <div style="float: left;width: 60px;height: 60px;margin-left: 10%;text-align: center">
+                <div>
+                    <p>{{ blog[7] }}</p>
+                    <p style="margin-top: 3px;font-weight: 600;">收藏数</p>
+                </div>
+            </div>
+            <div style="float: left;width: 60px;height: 60px;margin-left: 10%;text-align: center">
+                <div>
+                    <p>{{ blog[8] }}</p>
+                    <p style="margin-top: 3px;font-weight: 600;">积分</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="overflow: hidden;">
+            <button style="width: 70px;height: 30px;margin-top:40px ;margin-left: 20%;border-radius: 15px;background: #fff;float: left;">
+                关注
+            </button>
+            <button style="width: 70px;height: 30px;margin-top:40px ;margin-left: 20%;border-radius: 15px;background: #fff;float: left;">
+                私信
+            </button>
+        </div>
+        <div style="margin-left: 7%;margin-top: 5%;">
+            <p style="font-size: 15px;">热门文章：</p>
+        </div>
+        <div class="box_box">
+            <div style="margin:2% 0px 0px 10%;height: 7%;font-size: 15px">
+                <a href="{{ sortres[0][4] }}">{{ sortres[0][1] }}</a>
+                &nbsp;&nbsp;&nbsp;<img src="../static/img/view.png"
+                                       style="width: 20px;height: 17px">&nbsp;{{ sortres[0][2] }}
+            </div>
+        </div>
+        <div class="box_box" style="margin-top: 10px">
+            <div style="margin:0px 0px 0px 10%;height: 7%;font-size: 15px">
+                <a href="{{ sortres[1][4] }}">{{ sortres[1][1] }}</a>&nbsp;&nbsp;&nbsp;<img src="../static/img/view.png"
+                                                                                            style="width: 20px;height: 17px">&nbsp;{{ sortres[1][2] }}
+            </div>
+        </div>
+        <div class="box_box" style="margin-top: 10px">
+            <div style="margin:0px 0px 0px 10%;height: 7%;font-size: 15px">
+                <a href="{{ sortres[2][4] }}">{{ sortres[2][1] }}</a>&nbsp;&nbsp;&nbsp;<img src="../static/img/view.png"
+                                                                                            style="width: 20px;height: 17px">&nbsp;{{ sortres[2][2] }}
+            </div>
+        </div>
+        <div class="box_box" style="margin-top: 10px">
+            <div style="margin:0px 0px 0px 10%;height: 7%;font-size: 15px">
+                <a href="{{ sortres[3][4] }}">{{ sortres[3][1] }}</a>&nbsp;&nbsp;&nbsp;<img src="../static/img/view.png"
+                                                                                            style="width: 20px;height: 17px">&nbsp;{{ sortres[3][2] }}
+            </div>
+        </div>
+
+    </div>
+    <div style="position: absolute;font-size:15px;right:3%;left: 26%;width: 71%;margin-top:65px;
+		background: #fff;
+		border-radius: 50px;
+		opacity: 0.75;">
+
+        <div style="height: 60px;overflow: hidden;">
+            <div class="fl">
+                <ul style="overflow: hidden;margin: 0px;">
+                    <li style="float: left;margin-left: 30px;line-height: 60px;font-size: 17px;"><a href="#">博客</a></li>
+                    <li style="float: left;margin-left: 40px;line-height: 60px;font-size: 17px;"><a href="#">资源</a></li>
+
+                    <li style="float: left;margin-left: 40px;line-height: 60px;font-size: 17px;">
+                        <form action = "http://localhost:5000/graph_day" method = "POST">
+                            <button value =  '{{ blog[0] }}' name="name" style="border: none;font-size: 17px;background: white">日访问</button>
+                        </form>
+                    </li>
+                    <li style="float: left;margin-left: 40px;line-height: 60px;font-size: 17px;">
+                        <form action = "http://localhost:5000/graph_month" method = "POST">
+                            <button value = '{{ blog[0] }}' name="name" style="border: none;font-size: 17px;background: white">月访问</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="fl" style="margin-left: 5%;">
+                <img src="../static/img/kt.png" style="width:70px;height:70px;opacity: 1;"/>
+            </div>
+
+        </div>
+        <hr>
+        <div style="height: 40px;">
+            <ul style="overflow: hidden;margin: 0px;">
+                <li onclick="Tab(1)" style="float: right;margin-right: 7%;line-height: 40px;"><a href="#">按最后发布时间</a>
+                </li>
+                <li onclick="Tab(2)" style="float: right;margin-right: 7%;line-height: 40px;"><a href="#">按访问量</a>
+                </li>
+                <li  style="float: right;margin-right: 2%;line-height: 40px;"> <p>排序：</p></li>
+                <li style="float: right;margin-right: 2%;line-height: 40px;"><p><a href="{{ update_src }}">数据更新</a></p>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div id="d1">
+            {% for data in datas %}
+                <div class="box_box">
+                    <a href="{{ data[4] }}">
+                        <p style="font-size:28px;margin-left: 10px">{{ data[1] }}</p>
+                    </a>
+                    <p style="font-size:16px;margin-top: 10px;margin-left: 12px;font-weight: 100">
+                        文章简介：{{ data[6] }}</p>
+                    <p style="font-size:20px;margin-top: 10px;margin-left: 12px;margin-bottom: 3px">
+                        发布时间：{{ data[3] }}&nbsp;&nbsp;&nbsp;&nbsp;访问量：{{ data[2] }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+        <div id="d2">
+            {% for data in sortres %}
+                <div class="box_box">
+                    <a href="{{ data[4] }}">
+                        <p style="font-size:28px;margin-left: 10px">{{ data[1] }}</p>
+                    </a>
+                    <p style="font-size:16px;margin-top: 10px;margin-left: 12px;font-weight: 100">
+                        文章简介：{{ data[6] }}</p>
+                    <p style="font-size:20px;margin-top: 10px;margin-left: 12px;margin-bottom: 3px">
+                        发布时间：{{ data[3] }}&nbsp;&nbsp;&nbsp;&nbsp;访问量：{{ data[2] }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+        <div id="d3">
+            {% for data in search %}
+                <div class="box_box">
+                    <a href="{{ data[4] }}">
+                        <p style="font-size:28px;margin-left: 10px">{{ data[1] }}</p>
+                    </a>
+                    <p style="font-size:16px;margin-top: 10px;margin-left: 12px;font-weight: 100">
+                        文章简介：{{ data[6] }}</p>
+                    <p style="font-size:20px;margin-top: 10px;margin-left: 12px;margin-bottom: 3px">
+                        发布时间：{{ data[3] }}&nbsp;&nbsp;&nbsp;&nbsp;访问量：{{ data[2] }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+<script>console.log("heeeee")</script>
+</html>

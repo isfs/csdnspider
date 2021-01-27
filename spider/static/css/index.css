@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import 'reset.css';
+/*
+博主页面
+ */
+
+#daoHang li{
+	float: left;
+	line-height: 30px;
+	padding: 0px 6px;
+	font-weight: normal;
+}
+#daoHang a{
+	color: #6c6c6c;
+	font-size: 17px;
+	margin-right: 40px;
+}
+#daoHang span{
+	font-size:30px;
+	
+}
+#daoHang a:hover{
+	color: #578dc4;
+}
+ul{
+	list-style:none;
+}
+
+#daoHang ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.zhuce{
+	left: 3%;
+	font-size:15px;
+	position: fixed;
+	margin-top: 65px;
+	height: 85%;
+	background: #fff;
+	border-radius: 30px;
+	overflow: hidden;
+	opacity: 0.75;
+}
+#sbt{
+	background: #BDCEFC;
+    border-radius: 5px;
+    height:50px;
+    width: 150px;
+    border:0px;
+    font-size: 17px;
+}
+

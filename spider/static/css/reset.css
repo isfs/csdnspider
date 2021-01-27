@@ -1,0 +1,48 @@
+@charset "UTF-8";
+body,p,h1,h2,h3,h4{
+	 margin:0;
+}
+
+img{
+	border: none;
+	vertical-align: middle;
+}
+a{
+	text-decoration:none;
+	color: #000000; 
+}
+i{
+	font-style: normal;
+}
+input,button{
+	margin:0;
+	padding: 0;
+}
+button{
+	outline: none;
+}
+body{
+
+	/*字体大小/行高 font-family, \5b8b\4f53是unicode,一种字体:这里是宋体 */
+	font:12px/1.5 tahoma,arial,'Hiragino Sana GB',' \5b8b\4f53',sans-serif;
+	color: #3c3c3c;
+
+	 background-color: #fff;
+}
+
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+
+.layer{
+	width:100%;
+	margin:0 auto;
+}

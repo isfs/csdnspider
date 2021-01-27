@@ -1,0 +1,26 @@
+use blogdata;
+# 存储各大博主
+create table bloggers(
+	bloggername varchar(100) primary key,	# 博主名字
+	totalview varchar(100),	# 该博主总共的浏览量
+	imgsrc varchar(100),	# 该博主头像链接
+	original varchar(100),	# 该博主原创文章
+	totalrank varchar(100),	# 该博主总排名
+	name varchar(100),	# 该博主昵称
+	etc varchar(100),	# 该播主粉丝数
+	collect varchar(100),	# 该博主总收藏数
+	point varchar(100)	# 该博主积分
+);
+# 存储每个博主相对应的文章，也就是博客
+create table datas(
+	id int primary key auto_increment,	# id自增可要可不要
+	blogname varchar(100),	# 博客名字
+	pageview varchar(100),	# 博客浏览量
+	times varchar(100),		# 博客发布时间
+	bloglink varchar(100),	# 博客链接	
+	notes varchar(255),		# 博客简介
+	datas_id varchar(100),	# 博客发布人，也就是相对应的博主
+	foreign key(datas_id) references bloggers(bloggername) # 外键
+	on update cascade #     级联更新
+	on delete cascade # 级联删除
+);

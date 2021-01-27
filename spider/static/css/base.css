@@ -1,0 +1,235 @@
+/*
+首页
+ */
+
+/**
+ * 统配选择器
+ * 作用:给到网页所有标签设置样式
+ * 写法:*{}
+ * 注意:该选择器优先级最低
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * 标签选择器
+ * 作用:给指定标签设置样式
+ * 写法:标签名{}
+ * 多个选择器同一个样式可以使用逗号连接
+ */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ * id选择器
+ * 作用:给当前网页中id属性值为xxx的设置样式
+ * 写法:#id的属性值{}
+ * 注意:除内联样式外优先级最高
+ */
+#content {
+    width: 100%;
+    height: 100%;
+    min-width: 1240px;
+    min-height: 600px;
+    /**
+     * 为了防止直系子控件使用绝对定位,
+     * 从父容器飞出,所以父容器一定要做定位
+     */
+    position: relative;
+}
+
+img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+#box_top {
+    width: 100%;
+    height: 30px;
+    /**
+     * 相对于自己的原位置进行移动使用相对定位
+     * 相对定位不会影响别的标签的位置
+     */
+    position: relative;
+    top: 20px;
+}
+
+#box_center {
+    width: 680px;
+    height: auto;
+    /**
+     * 相对于父容器的位置进行移动使用绝对定位
+     * 绝对定位不会保留标签原位置,会导致空间塌陷
+     * 绝对定位相对父容器一定要做过定位
+     */
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -340px;
+
+}
+
+#box_next {
+    margin-left: -550px;
+    top: 300px;
+    left: 50%;
+    position: absolute;
+    width: 1100px;
+    height: auto;
+}
+
+#box_next_next {
+    margin-left: -550px;
+    top: 460px;
+    left: 50%;
+    position: absolute;
+    width: 1100px;
+    height: auto;
+}
+
+#box_bottom {
+    width: 100%;
+    height: 30px;
+    background: blue;
+    /**
+     * 相对于浏览器窗口的某个位置,使用浏览器窗口定位
+     * 不会保留标签原位置
+     */
+    position: fixed;
+    bottom: 0px;
+}
+
+/**
+ * HTML中的标签类型
+ * 行内元素:设置宽高无效,大小由内容大小决定
+ * 		font,a...
+ * 行内块元素:设置宽高有效,但是不独占一行
+ * 		input,img...
+ * 块元素:设置宽高有效,默认宽度为撑满父容器,独占一行
+ * 		div,p,h1~h6...
+ * 如何修改元素类型
+ * 		通过display属性进行修改
+ * 		inline:行内
+ * 		inline-block:行内块
+ * 		block:块
+ */
+#box_top_left {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#box_top_right {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+
+}
+
+.text1 {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    margin-right: 36px;
+}
+
+/**
+ * 伪类选择器之鼠标悬浮
+ */
+.text1:hover {
+    color: #4E6EF2;
+}
+
+#btn_login {
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    color: white;
+    background: #4E6EF2;
+    font-size: 13px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 10px;
+}
+
+#img_logo {
+    height: 140px;
+    width: 260px;
+    position: relative;
+    left: 50%;
+    margin-left: -130px;
+}
+
+#box_input {
+    margin-top: 10px;
+    position: relative;
+}
+
+#input {
+    width: 538px;
+    height: 46px;
+    border: 2px solid gainsboro;
+    border-right-width: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+    padding-left: 10px;
+}
+
+#btn_start {
+    width: 130px;
+    height: 46px;
+    background: #4E6EF2;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#box_text {
+    margin-top: 30px;
+    font-size: 13px;
+    position: relative;
+}
+
+.text3 {
+    color: gainsboro;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.list {
+    line-height: 40px;
+    font-size: 13px;
+    list-style: none;
+}
+
+#list_right {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    right: 0px;
+    top: 0px;
+}
+
+.box_box {
+    flex: 1;
+    height: 100%;
+    float: left;
+    width: 20%;
+}
+
